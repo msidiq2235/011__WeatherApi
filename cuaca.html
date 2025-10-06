@@ -214,5 +214,51 @@
 
     </div>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $('#search-form').on('submit', function(e) {
+      e.preventDefault();
+
+      const kota = $('#location-input').val();
+      
+      $('#weather-results').addClass('hidden');
+      $('#error-message').addClass('hidden');
+
+      if (kota) {
+        const urlapi = `http://api.weatherapi.com/v1/current.json?key=e1515df266c442298f340428250610&q=${kota}&aqi=no`;
+
+        $.ajax({
+          url : urlapi,
+          method : "GET",
+          success : function(data){
+            console.log(data);
+            
+            let suhu = data.current.temp_c;
+            let lokasi = data.location.name;
+            let negara = data.location.country;
+            let provinsi = data.location.region;
+            let longitude = data.location.lon;
+            let latitude = data.location.lat;
+            
+            $('#suhu').text(Math.round(suhu) + '°C');
+            $('#lokasi').text(lokasi);
+            $('#negara').text(negara);
+            $('#provinsi').text(provinsi);
+            $('#longitude').text(longitude);
+            $('#latitude').text(latitude);
+
+            $('#weather-results').removeClass('hidden');
+          },
+          error: function(err) {
+            console.error("Gagal mengambil data cuaca:", err);
+            $('#error-message').removeClass('hidden');
+          }
+        })
+      }
+    });
+  </script>
+
 </body>
 </html>
