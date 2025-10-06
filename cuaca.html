@@ -171,4 +171,48 @@
   </style>
 </head>
 <body>
- 
+  
+  <div id="tampilan" class="race-dashboard">
+    <div class="header">
+      <h1>Data Cuaca</h1>
+    </div>
+    <div class="content-area">
+
+      <form id="search-form" class="search-box">
+        <input type="text" id="location-input" placeholder="Masukkan nama kota..." required>
+        <button type="submit">Cek</button>
+      </form>
+      
+      <div id="weather-results" class="hidden">
+        <div class="main-display">
+          <div id="suhu">--°</div>
+          <div id="lokasi">---</div>
+        </div>
+
+        <div class="pit-board">
+          <div class="data-item">
+            <span class="label">Negara</span>
+            <span class="value" id="negara">-</span>
+          </div>
+          <div class="data-item">
+            <span class="label">Provinsi</span>
+            <span class="value" id="provinsi">-</span>
+          </div>
+          <div class="data-item">
+            <span class="label">Longitude</span>
+            <span class="value" id="longitude">-</span>
+          </div>
+          <div class="data-item">
+            <span class="label">Latitude</span>
+            <span class="value" id="latitude">-</span>
+          </div>
+        </div>
+      </div>
+      <div id="error-message" class="hidden" style="color: #fab1a0; text-align: center; margin-top: 15px; background-color: rgba(214, 48, 49, 0.2); padding: 10px; border-radius: 5px;">
+        Lokasi tidak ditemukan.
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
