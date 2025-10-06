@@ -7,4 +7,168 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap');
 
-   
+    :root {
+      --asphalt-bg: #2d3436;
+      --panel-bg: #4b4b4b;
+      --race-red: #d63031;
+      --text-light: #dfe6e9;
+      --text-dark: #2d3436;
+      --border-color: #636e72;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: var(--asphalt-bg);
+      background-image: linear-gradient(rgba(255,255,255,0.02) 2px, transparent 2px),
+                        linear-gradient(90deg, rgba(255,255,255,0.02) 2px, transparent 2px);
+      background-size: 50px 50px;
+      padding: 20px;
+    }
+
+    .race-dashboard {
+      width: 100%;
+      max-width: 500px;
+      background: var(--panel-bg);
+      border: 3px solid var(--border-color);
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+
+    .header {
+      background-color: var(--race-red);
+      background-image:
+        linear-gradient(45deg, #2d3436 25%, transparent 25%),
+        linear-gradient(-45deg, #2d3436 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #2d3436 75%),
+        linear-gradient(-45deg, transparent 75%, #2d3436 75%);
+      background-size: 30px 30px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .header h1 {
+      background: var(--panel-bg);
+      color: var(--text-light);
+      font-size: 1.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 10px;
+      border: 2px solid var(--border-color);
+      display: inline-block;
+    }
+    
+    .content-area {
+      padding: 25px;
+    }
+    
+    .search-box {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .search-box input {
+      flex-grow: 1;
+      background: var(--asphalt-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 5px;
+      padding: 12px 15px;
+      font-size: 1rem;
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .search-box input:focus {
+      border-color: var(--race-red);
+    }
+
+    .search-box button {
+      background-color: var(--race-red);
+      color: var(--text-light);
+      border: none;
+      padding: 0 25px;
+      border-radius: 5px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .search-box button:hover {
+      background-color: #e17055;
+    }
+
+    .main-display {
+      background: var(--asphalt-bg);
+      border-radius: 5px;
+      margin-bottom: 25px;
+      padding: 20px;
+      text-align: center;
+      border: 2px solid var(--border-color);
+    }
+
+    #suhu {
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--text-light);
+      line-height: 1;
+    }
+
+    #lokasi {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-top: 5px;
+      border-top: 3px solid var(--race-red);
+      padding-top: 10px;
+      display: inline-block;
+    }
+
+    .pit-board {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .data-item {
+      background: #dfe6e9;
+      padding: 15px;
+      border-radius: 5px;
+      border-left: 8px solid var(--race-red);
+    }
+    
+    .data-item .label {
+      display: block;
+      color: #636e72;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .data-item .value {
+      color: var(--text-dark);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .hidden {
+        display: none;
+    }
+  </style>
+</head>
+<body>
+ 
